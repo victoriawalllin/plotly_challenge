@@ -1,6 +1,6 @@
 function init() {
     let dropdownMenu = d3.select("#selDataset");
-    d3.json("static/js/samples.json").then((data) => {
+    d3.json("data/samples.json").then((data) => {
 
     let nameID = data.names;
     console.log(nameID)
@@ -22,7 +22,7 @@ function init() {
 init();
 
 function optionChanged(id) {
-    d3.json("static/js/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
     let samples = data.samples;
     let resultArray = samples.filter(sampleObj => sampleObj.id == id);
     let result = resultArray[0];
